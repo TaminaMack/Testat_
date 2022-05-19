@@ -1,0 +1,29 @@
+Datensatz Kader und Transfers des VfB Stuttgart nach Nationalität und vorheriger Verein
+
+
+Inhalt:
+- Edgelist.csv (Edgelist)
+- Nodelist.csv (Nodelist)
+- Codebuch.md (Codierung der Datensätze)
+
+
+Ursprung und Datenerhebung:
+Es geht um den akutellen Kader des VfBs mit seinen Transfers, der Nationalität der Fußballspieler und die Summe, die für sie bezahlt wurde. Dazu nutze ich die Informationen von Transfermarkt.de (https://www.transfermarkt.de/vfb-stuttgart/kader/verein/79/saison_id/2021/plus/1).
+
+
+Edge-Attribute:
+from,to,weight,season
+
+from = von welchem Verein kommt der Spieler 
+to = ID des Spielers (Rückennummer)
+weight = Transfersumme in 100.000 Euro Schritten, gerundet falls abweichend
+season = Transferfenster, nur erste Jahreszahl des Fensters
+
+
+Node-Attribute:
+id, name,country,type
+
+id = Rückennumer oder Vereinsname
+name = Spieler oder Vereinsname
+country = Land
+type = 1 : Spieler, 2 : Verein
